@@ -11,7 +11,7 @@ function RevealWord({ text, className }: { text: string; className?: string }) {
   return (
     <span className={`flex overflow-hidden ${className ?? ""}`}>
       {text.split("").map((ch, i) => (
-        <span key={i} className="overflow-hidden">
+        <span key={i} className="overflow-hidden px-[0.1em] -mx-[0.1em]">
           <motion.span
             className={`inline-block${ch === "O" ? " italic" : ""}`}
             initial={{ y: "115%" }}
@@ -41,24 +41,24 @@ export default function Hero() {
       id="top"
       ref={ref}
       data-nav-dark
-      className="relative flex min-h-[100svh] flex-col overflow-hidden text-cream"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden text-cream"
     >
       {/* Stock-image carousel backdrop */}
       <HeroCarousel />
 
       <motion.div
         style={{ y: yText, opacity }}
-        className="relative z-10 flex flex-1 flex-col items-center justify-between px-6 py-[68px] text-center"
+        className="relative z-10 flex flex-col items-center px-6 text-center"
       >
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.34em] text-cream/80"
+          className="mb-16 flex items-center gap-3 text-[16px] font-medium uppercase tracking-[0.34em] text-cream/80"
         >
-          <Star className="size-3.5 text-gold" />
+          <Star className="size-7.5 text-gold" />
           Est. Bengaluru · Flame-Grilled Daily
-          <Star className="size-3.5 text-gold" />
+          <Star className="size-7.5 text-gold" />
         </motion.div>
 
         <h1 className="font-display font-semibold leading-[0.86] tracking-tighter">
@@ -72,31 +72,29 @@ export default function Hero() {
           />
         </h1>
 
-        <div className="flex flex-col items-center">
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.9 }}
-            className="max-w-xl font-serif text-lg italic text-cream/85 md:text-2xl"
-          >
-            Royally spiced, hand-rolled and flame-kissed — the street-food
-            legend, reimagined for the connoisseur.
-          </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="mt-12 max-w-xl font-serif text-lg italic text-cream/85 md:text-2xl"
+        >
+          Royally spiced, hand-rolled and flame-kissed — the street-food
+          legend, reimagined for the connoisseur.
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.9 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-4"
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.25, duration: 1 }}
+          className="mt-16 flex flex-wrap items-center justify-center gap-4"
+        >
+          <a
+            href="#menu"
+            className="rounded-full bg-cream px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-brand shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] transition-colors hover:bg-white"
           >
-            <a
-              href="#menu"
-              className="rounded-full bg-cream px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-brand shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] transition-colors hover:bg-white"
-            >
-              Explore the Menu
-            </a>
-          </motion.div>
-        </div>
+            Explore the Menu
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   );

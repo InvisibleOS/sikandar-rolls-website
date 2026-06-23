@@ -54,7 +54,7 @@ export default function Navbar() {
             <motion.span
               whileHover={{ rotate: 90 }}
               transition={{ type: "spring", stiffness: 200, damping: 14 }}
-              className={`transition-colors duration-500 ${
+              className={`transition-colors duration-300 ${
                 onDark ? "text-brand" : "text-ink"
               }`}
             >
@@ -62,7 +62,7 @@ export default function Navbar() {
             </motion.span>
             <Wordmark
               tracking="tracking-[0.02em]"
-              className={`text-3xl transition-colors duration-500 ${
+              className={`text-3xl transition-colors duration-300 ${
                 onDark ? "text-cream" : "text-brand"
               }`}
             />
@@ -74,7 +74,7 @@ export default function Navbar() {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className={`group relative text-[13px] font-medium uppercase tracking-[0.14em] transition-colors duration-500 hover:text-brand ${
+                    className={`group relative text-[13px] font-medium uppercase tracking-[0.14em] transition-colors duration-300 hover:text-brand ${
                       onDark ? "text-cream/90" : "text-ink-soft"
                     }`}
                   >
