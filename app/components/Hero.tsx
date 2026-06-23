@@ -41,20 +41,20 @@ export default function Hero() {
       id="top"
       ref={ref}
       data-nav-dark
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden text-cream"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden text-cream"
     >
       {/* Stock-image carousel backdrop */}
       <HeroCarousel />
 
       <motion.div
         style={{ y: yText, opacity }}
-        className="relative z-10 flex flex-col items-center px-6 text-center"
+        className="relative z-10 flex flex-1 flex-col items-center justify-between px-6 py-[68px] text-center"
       >
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="mb-7 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.34em] text-cream/80"
+          className="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.34em] text-cream/80"
         >
           <Star className="size-3.5 text-gold" />
           Est. Bengaluru · Flame-Grilled Daily
@@ -72,29 +72,31 @@ export default function Hero() {
           />
         </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.9 }}
-          className="mt-7 max-w-xl font-serif text-lg italic text-cream/85 md:text-2xl"
-        >
-          Royally spiced, hand-rolled and flame-kissed — the street-food
-          legend, reimagined for the connoisseur.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.9 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <a
-            href="#menu"
-            className="rounded-full bg-cream px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-brand shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] transition-colors hover:bg-white"
+        <div className="flex flex-col items-center">
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.9 }}
+            className="max-w-xl font-serif text-lg italic text-cream/85 md:text-2xl"
           >
-            Explore the Menu
-          </a>
-        </motion.div>
+            Royally spiced, hand-rolled and flame-kissed — the street-food
+            legend, reimagined for the connoisseur.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.9 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-4"
+          >
+            <a
+              href="#menu"
+              className="rounded-full bg-cream px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-brand shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] transition-colors hover:bg-white"
+            >
+              Explore the Menu
+            </a>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );

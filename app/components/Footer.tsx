@@ -44,8 +44,8 @@ export default function Footer() {
     >
       <div className="dots-cream absolute inset-0 opacity-[0.04]" />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col px-6">
-        <div className="grid grid-cols-1 gap-12 pb-8 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between px-6">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
             <div className="flex items-center gap-2.5">
               <Star className="size-7 text-gold" />
@@ -92,7 +92,7 @@ export default function Footer() {
           </motion.h2>
         </a>
 
-        <div className="mt-auto flex flex-col items-center justify-between gap-4 border-t border-cream/15 py-8 text-xs text-cream/60 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-cream/15 py-8 text-xs text-cream/60 md:flex-row">
           <p>© 2026 Sikandar Rolls. Crafted with fire & a little mischief.</p>
           <a
             href="#top"
