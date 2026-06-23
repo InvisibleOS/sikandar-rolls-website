@@ -22,17 +22,17 @@ export default function Navbar() {
   const [onDark, setOnDark] = useState(true);
   const [open, setOpen] = useState(false);
 
-  // The navbar wears its hero/red style (white text, red star) whenever a
-  // dark/red section sits beneath it, and its light style over pale sections.
+  // Two states: dark (over a red/dark section) → white; light (over pale
+  // sections) → ink. A section is "dark" if it carries data-nav-dark.
   const updateNav = useCallback(() => {
     const header = document.querySelector("header");
     const line = header ? header.offsetHeight / 2 : 34;
-    let dark = false;
-    document.querySelectorAll("[data-nav-dark]").forEach((el) => {
-      const r = el.getBoundingClientRect();
-      if (r.top <= line && r.bottom > line) dark = true;
-    });
-    setOnDark(dark);
+    setOnDark(
+      [...document.querySelectorAll("[data-nav-dark]")].some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top <= line && r.bottom > line;
+      }),
+    );
   }, []);
 
   useMotionValueEvent(scrollY, "change", updateNav);
@@ -55,7 +55,7 @@ export default function Navbar() {
               whileHover={{ rotate: 90 }}
               transition={{ type: "spring", stiffness: 200, damping: 14 }}
               className={`transition-colors duration-300 ${
-                onDark ? "text-brand" : "text-ink"
+                onDark ? "text-cream" : "text-ink"
               }`}
             >
               <Star className="size-6" />

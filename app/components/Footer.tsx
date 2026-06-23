@@ -86,7 +86,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-outline-cream select-none text-center font-display text-[18vw] font-semibold uppercase leading-[0.8] tracking-tighter md:text-[15vw]"
+            className="text-brand select-none text-center font-display text-[18vw] font-semibold uppercase leading-[0.8] tracking-tighter md:text-[15vw]"
           >
             SIKANDAR R<span className="italic">O</span>LLS
           </motion.h2>
