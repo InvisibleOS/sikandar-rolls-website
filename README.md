@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sikandar Rolls — Landing Page
 
-## Getting Started
+A cinematic, animation-rich landing page for **Sikandar Rolls**, a flame-grilled
+kathi-roll street-food brand. Built around the brand's red-and-white identity,
+its six-pointed "spark" motif and the polka-dot canopy of the storefront.
 
-First, run the development server:
+## Highlights
+
+- **Cinematic hero** — character-by-character headline reveal, parallax, a rising
+  ember/spice particle field (Canvas 2D) and a glossy distorted "spice orb"
+  rendered with **Three.js** (`@react-three/fiber` + `drei`).
+- **Buttery scrolling** — smooth scroll via **Lenis**, a scroll-progress bar and
+  scroll-linked parallax throughout.
+- **Motion everywhere** — built with **Motion** (Framer Motion): scroll reveals,
+  a magnetic cursor + magnetic buttons, an animated marquee, 3D-tilt menu cards,
+  count-up statistics and an animated reservation flow.
+- **Brand system** — custom red/cream palette, `Cinzel` display type to echo the
+  storefront sign, `Cormorant Garamond` for editorial accents, `Geist` for UI.
+- **Responsive & accessible** — full mobile layout with an overlay menu, and
+  `prefers-reduced-motion` support.
+
+## Tech stack
+
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 16 (App Router) · React 19 |
+| Styling | Tailwind CSS v4 |
+| Animation | Motion (`motion/react`) · Lenis |
+| 3D | Three.js · @react-three/fiber · @react-three/drei |
+| Language | TypeScript |
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Structure
 
-## Learn More
+```
+app/
+  layout.tsx          # fonts + metadata
+  globals.css         # brand tokens, utilities, keyframes
+  page.tsx            # section composition
+  components/
+    SmoothScroll · Cursor · ScrollProgress
+    Navbar · Hero · HeroScene (3D) · EmberCanvas
+    Marquee · Story · Menu · MenuCard
+    Signature · Stats · Reservation · Footer
+    RollArt · Seal · Star · Reveal · MagneticButton
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Menu, pricing, address and contact details are placeholder content — swap in
+> the real brand data and food photography before launch.
